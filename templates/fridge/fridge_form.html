@@ -1,0 +1,9 @@
+<h3> Add ingredientsss</h3>
+
+  <form method="post">
+        {% csrf_token %}
+        <table>{{ form }}</table>
+        <input type="submit" value="Submit" class="btn btn-primary">
+      <p>{{ form.errors }}</p>
+    </form>
+

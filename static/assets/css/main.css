@@ -729,6 +729,17 @@ section,
   position: relative;
 }
 
+/*#stats{*/
+/*  border: 1px solid red;*/
+/*  height: 20rem;*/
+/*  background-image: url("../img/spices-of-sri-lanka-brixlk_.jpg");*/
+/*  background-position: center center;*/
+/*  background-repeat: no-repeat;*/
+/*  background-size: cover;*/
+/*}*/
+
+
+
 .section-title h2:before,
 .section-title h2:after {
   content: "";
@@ -1033,12 +1044,14 @@ section,
 /* Stats Section - Home Page
 ------------------------------*/
 .stats {
+  max-height: 20rem;
   --default-color: #ffffff;
   --default-color-rgb: 255, 255, 255;
   --background-color: #000000;
   --background-color-rgb: 0, 0, 0;
   position: relative;
   padding: 120px 0;
+  /*border: 10px solid red */
 }
 
 .stats img {
@@ -1051,6 +1064,7 @@ section,
   object-fit: cover;
   z-index: 1;
 }
+
 
 .stats:before {
   content: "";
@@ -1066,8 +1080,10 @@ section,
 }
 
 .stats .stats-item {
-  padding: 30px;
+  /*padding: 10px 30px;*/
   width: 100%;
+
+
 }
 
 .stats .stats-item span {
@@ -2890,4 +2906,28 @@ section,
 .blog-details .comments .reply-form .btn-primary:hover {
   color: var(--contrast-color);
   background-color: rgba(var(--accent-color-rgb), 0.8);
+}
+
+
+.gradient-custom-2 {
+/* fallback for old browsers */
+background: #fccb90;
+
+/* Chrome 10-25, Safari 5.1-6 */
+background: -webkit-linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+
+/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+}
+
+@media (min-width: 768px) {
+.gradient-form {
+height: 100vh !important;
+}
+}
+@media (min-width: 769px) {
+.gradient-custom-2 {
+border-top-right-radius: .3rem;
+border-bottom-right-radius: .3rem;
+}
 }

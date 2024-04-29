@@ -50,10 +50,10 @@
         <h1>MyFridgeRecipes</h1>
         <span>.</span>
       </a>
-    
-     {% include 'layout/navbar-home.html' %}
-{#    <form>#}
- {% if request.user.is_authenticated %}
+
+     {% include 'layout/navbar-recipe.html' %}
+
+      {% if request.user.is_authenticated %}
     
       <a style="position: fixed ;margin-left: 104rem" class="btn-getstarted"  href="{% url 'home-page' %}">{{ request.user }}</a>
          <form method="post" action="{% url 'logout' %}">
@@ -64,7 +64,7 @@
       <a class="btn-getstarted" href="{% url 'login' %}">Login</a>
         
         {% endif %}
-{#</form>#}
+
     </div>
   </header><!-- End Header -->
 
@@ -74,6 +74,8 @@
     {% endblock content %}
   
   {% include 'layout/footer.html' %}
+  
+  
 
   <!-- Scroll Top Button -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>

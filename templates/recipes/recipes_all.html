@@ -1,0 +1,63 @@
+{% extends 'layout/base-recipes.html' %}
+{% load static %}
+{% block content %}
+
+
+
+    <section id="stats" class="stats">
+        <style> h3 {
+            color: white
+        } </style>
+        <img  src="{% static 'assets/img/spices-of-sri-lanka-brixlk_.jpg' %}" alt="" data-aos="fade-in">
+        <div class="container position-relative" data-aos="fade-in" data-aos-delay="100">
+            <div  class="stats-item text-center">
+                <span>Recipes</span>
+                <h3 data-purecounter-start="0" data-purecounter-end="{{ recipemodel_list.count }}"
+                    data-purecounter-duration="1" class="purecounter"></h3>
+                <p> Try our healthy recipes</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="blog" class="blog">
+
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="row gy-4 posts-list">
+                {% for recipe in object_list %}
+                    <div class="col-xl-4 col-lg-6">
+                        <article>
+
+                            <div class="post-img">
+                                <img src="{{ recipe.image.url }}" alt="" class="img-fluid">
+                            </div>
+
+                            <p class="post-category">{{ recipe.time }} Minutes</p>
+
+                            <h2 class="title">
+                                <a href="{% url 'recipes-detail' recipe.id %}">{{ recipe.name }}</a>
+                            </h2>
+
+                            
+                        </article>
+                    </div><!-- End post list item -->
+                {% endfor %}
+
+            </div>
+        </div>
+
+{# <div class="pagination d-flex justify-content-center">#}
+{#        <ul>#}
+{#            <li  class="active" ><a href="#">1</a></li>#}
+{#            <li><a href="#">2</a></li>#}
+{#            <li><a href="#">3</a></li>#}
+{#        </ul>#}
+{#    </div><!-- End pagination -->#}
+{#    </section>#}
+   
+
+
+
+{% endblock content %}

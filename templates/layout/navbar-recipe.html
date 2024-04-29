@@ -1,0 +1,25 @@
+ <!-- Nav Menu -->
+      <nav  id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="{% url 'home-page' %}" >Home</a></li>
+          <li><a href="{% url 'home-page' %}#about">About</a></li>
+            <li class="dropdown has-dropdown "><a href="{% url 'home-page' %}#recipes"><span>Recipes</span> <i class="bi bi-chevron-down"></i></a>
+            <ul class="dd-box-shadow">
+              <li><a href="{% url 'recipes-all' %}">See all Recipes</a></li>
+            </ul>
+          </li>
+            
+            {% if request.user.is_authenticated %}
+                <li><a href="{% url 'myfridge_list' %}" >My Fridge</a></li>
+            {% endif %}
+            
+          <li><a href="{% url 'home-page' %}#contact">Contact</a></li>
+        </ul>
+
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav><!-- End Nav Menu -->
+ 
+ 
+ 
+ 
+ 

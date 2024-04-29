@@ -1,0 +1,107 @@
+{% extends 'layout/base-recipes.html' %}
+{% load static %}
+{% block content %}
+
+
+
+    <section id="stats" class="stats">
+        <style> h3 {
+            color: white
+        } </style>
+        <img src="{% static 'assets/img/spices-of-sri-lanka-brixlk_.jpg' %}" alt="" data-aos="fade-in">
+        <div class="container position-relative" data-aos="fade-in" data-aos-delay="100">
+            <div class="stats-item text-center w-100 h-100">
+                {% for item in recipe %}
+
+                <span>{{ item.name }}</span>
+                                    
+            
+            <p>Cooking time</p>
+
+                <h3 data-purecounter-start="0" data-purecounter-end="{{ item.time }}"
+                    data-purecounter-duration="1" class="purecounter">Recipes</h3>
+            {% endfor %}
+                <p> Minutes</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog-details Section - Blog Details Page -->
+    <section id="blog-details" class="blog-details">
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+            <div class="row g-5">
+
+                <div class="col-lg-8">
+
+                    <article class="article">
+
+                        <div class="post-img">
+                            <img src="assets/img/blog/blog-1.jpg" alt="" class="img-fluid">
+                        </div>
+{% for name in recipe %}
+                        <h2 class="title">{{ name.name }}</h2>
+                    {% endfor %}
+
+                        <div class="meta-top">
+                            <ul>
+                                {% for time in recipe %}
+                                <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a
+                                        href="">{{ time.time }} Minutes</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div><!-- End meta top -->
+
+                        <div class="content">
+                        
+                                {% for step in steps %}
+                                    <p>{{ step.step_description }}</p>
+                                {% endfor %}
+                          
+
+{% for image in recipe %}
+                            <img src="{{ image.image.url }}" class="img-fluid" alt="">
+                        {% endfor %}
+
+
+                        </div><!-- End post content -->
+
+
+                    </article><!-- End post article -->
+
+                   
+
+                </div>
+
+                <div class="col-lg-4">
+
+                    <div class="sidebar">
+
+                        <div class="sidebar-item categories">
+                            <h3 class="sidebar-title">Ingredients</h3>
+                            <ul class="mt-3">
+                                {% for i in ingredients %}
+                                <li>{{ i.ingredients__name }}</li>
+                               {% endfor %}
+
+                            </ul>
+                        </div><!-- End sidebar categories-->
+
+                       
+                      
+                        </div>
+                    
+
+                    </div><!-- End Sidebar -->
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section><!-- End Blog-details Section -->
+
+    </main>
+
+{% endblock content %}
