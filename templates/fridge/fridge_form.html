@@ -1,9 +1,84 @@
-<h3> Add ingredientsss</h3>
+{% extends 'layout/base-recipes.html' %}
 
-  <form method="post">
-        {% csrf_token %}
-        <table>{{ form }}</table>
-        <input type="submit" value="Submit" class="btn btn-primary">
-      <p>{{ form.errors }}</p>
-    </form>
+{% load static %}
 
+{% block content %}
+
+    <section style="padding-bottom: 5px" id="stats" class="stats">
+
+
+        <img src="{% static 'assets/img/spices-of-sri-lanka-brixlk_.jpg' %}" alt="" data-aos="fade-in">
+
+    </section>
+
+
+
+
+
+
+    <section class="h-100 gradient-form" style="background-color: #eee; padding-top: 1px ">
+
+        <div style="padding-top: 5px" class="container py-5 h-100">
+
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-xl-10">
+                    <div class="card rounded-3 text-black">
+                        <div class="row g-0">
+                            <div class="col-lg-6">
+                                <div class="card-body p-md-5 mx-md-4">
+
+                                    <div class="text-center">
+                                        <img src="{% static 'assets/img/black-bowl-with-salad-isolated-on-a-transparent-background-png.webp' %}"
+                                             style="width: 185px;" alt="logo">
+                                        <h4 class="mt-1 mb-5 pb-1">MyFridgeRecipes.</h4>
+                                    </div>
+
+                                    <form action="" method="POST">
+                                        {% csrf_token %}
+                                        
+
+                                        <div data-mdb-input-init class="form-outline mb-4">
+                                            {{form}}
+                                        </div>
+
+                                        
+
+                                        <div class="text-center pt-1 mb-5 pb-1">
+                                            <button data-mdb-button-init data-mdb-ripple-init
+                                                    class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
+                                                    type="submit">Add
+                                            </button>
+
+                                        </div>
+                                        
+
+                                    </form>
+
+                                </div>
+                            </div>
+                            <div class="col-lg-6 d-flex align-items-center " style="background-color: darkolivegreen ">
+
+                                <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+
+                                    <h4 class="mb-4">We are more than just a company</h4>
+                                    <p class="small mb-0">At MyFridgeRecipes, we understand the daily challenge of
+                                        figuring out what to cook with the
+                                        ingredients you have on hand. That's why we've created a user-friendly platform
+                                        that allows you
+                                        to easily add the contents of your fridge to our virtual pantry. With just a few
+                                        taps, you can
+                                        turn those basic ingredients into delicious, customized recipes tailored to your
+                                        taste and
+                                        dietary preferences.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+{% endblock content %}

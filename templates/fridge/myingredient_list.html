@@ -31,17 +31,19 @@
 
     
     <section id="blog" class="blog">
+    
 
         <div class="container" data-aos="fade-up" data-aos-delay="100">
 
             <div class="row gy-4 posts-list">
                 {% for item in ingredient %}
-                    <div style=" width: 220px; height: 45px; text-align: center " class="col-xl-4 col-lg-6">
+                    <div style=" width: 220px; height: 20px; text-align: center " class="col-xl-4 col-lg-6">
                         <article style="padding-top: 10px">
 
-                            <p style="color: black" class="post-category">
+                            <td style="color: black" class="post-category">
                                 {{ item.ingredient.name }}
-                            </p>
+                            </td>
+                            <a  href="{% url 'delete' item.id %}">&#215;</a>
 
                             
                         </article>
